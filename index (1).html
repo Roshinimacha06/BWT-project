@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Study Group Finder</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+ <header class="top">
+  <div class="logo">Study <span>Group</span> Finder</div>
+  <div id="auth"></div>
+ </header>
+ <section class="hero">
+  <h1>Find people to study with, or start your own group.</h1>
+  <p>Browse groups by subject, day and place. Request to join and the group leader approves you.</p>
+ </section>
+ <div class="bar">
+  <input id="q" class="in" type="search" placeholder="Search by topic, subject, venue or leader" aria-label="Search groups">
+  <div class="row">
+   <select id="fs" class="in" aria-label="Subject"></select>
+   <select id="fd" class="in" aria-label="Day"></select>
+   <select id="fm" class="in" aria-label="Format"><option value="">Any format</option><option>In person</option><option>Online</option></select>
+   <select id="fo" class="in" aria-label="Sort"><option value="new">Newest first</option><option value="seats">Most open seats</option><option value="az">Title A to Z</option></select>
+   <label class="chk"><input type="checkbox" id="fa"> Has open seats</label>
+  </div>
+ </div>
+ <div class="tabs" role="tablist">
+  <button class="tab" role="tab" data-act="tab" data-v="all" aria-selected="true">Discover</button>
+  <button class="tab" role="tab" data-act="tab" data-v="mine" aria-selected="false">My groups</button>
+ </div>
+ <div class="meta"><span id="count"></span><button class="btn p" data-act="create">Create a group</button></div>
+ <main class="grid" id="grid"></main>
+</div>
+<div class="ov" id="ov" role="dialog" aria-modal="true"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
